@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Populate_Database_Tool", "Populate_Database_Tool\Populate_Database_Tool.csproj", "{D3DB9920-0854-4B29-85BC-28548006FCEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maori Dictionary Lookup", "Populate_Database_Tool\Maori Dictionary Lookup.csproj", "{D3DB9920-0854-4B29-85BC-28548006FCEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD570E86-60DA-4321-A003-213943B26E0E}
 	EndGlobalSection
 EndGlobal
