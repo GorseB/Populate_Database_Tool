@@ -20,17 +20,26 @@ namespace Populate_Database_Tool
             {
                 Result = GetData.GetSource("http://maoridictionary.co.nz/search?idiom=0&phrase=0&proverb=0&loan=0&histLoanWords=&keywords=" + textBox1.Text.ToString());
             }
-            catch (Exception Fe)
+            catch (Exception error)
             {
-                MessageBox.Show(Fe.ToString());
+                MessageBox.Show(error.ToString());
+                Application.Exit();
             }
-            int SIndex = Result.IndexOf(@"<h2 class=""title  "">") + 20;
-            int SENDIndex = Result.IndexOf(@"</div><!-- end .detail -->");
-            Result = Result.Substring(SIndex, SENDIndex - SIndex);
-            Result = GetDenotation(Result);
-            Result = GetTranslation(Result);
-            Result = GetMaori(Result);
-            WriteToFile(Result);
+            if (Result == "N/A")
+            {
+                MessageBox.Show("Result was N/A , Exiting");
+                Application.Exit();
+            }
+            else
+            {
+                int SIndex = Result.IndexOf(@"<h2 class=""title  "">") + 20;
+                int SENDIndex = Result.IndexOf(@"</div><!-- end .detail -->");
+                Result = Result.Substring(SIndex, SENDIndex - SIndex);
+                Result = GetDenotation(Result);
+                Result = GetTranslation(Result);
+                Result = GetMaori(Result);
+                WriteToFile(Result);
+            }
         }
 
         private int IndexOfOccurence(string s, string match, int occurence)
